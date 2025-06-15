@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mon Portfolio Numérique</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+
+</head>
+<body>
+        <header>
+        <nav id="menu">
+            <ul>
+                <li><a href="index.html">A propos de moi</a></li>
+                <li><a href="projet.html">Projets</a></li>
+                <li><a href="competence.html">Compétences</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="txt">
+  <h1>
+    Présentation des principaux projets réalisés.
+  </h1>
+
+    <h2>
+        Dans le cadre scolaire
+    </h2>
+    </div>
+<!-- Projet 1 : Image gauche, texte droite -->
+<div class="project-row">
+  <div class="project-img">
+    <img id="clickableImage1" src="img/P1.jpg" alt="Projet 1 : Cliquer ici" />
+  </div>
+  <div class="project-desc">
+    <h3>Projet 1&nbsp;: Rénovation d’un vélo de route</h3>
+    <p>Restauration complète d’un vélo vintage, démontage, sablage, peinture, upgrades.</p>
+  </div>
+</div>
+<!-- Modale Projet 1 -->
+<div id="myModal1" class="modal">
+  <span class="close-btn" id="closeModal1">&times;</span>
+  <div class="modal-content">
+    <div class="carousel" id="carousel1">
+      <button class="prev">&#10094;</button>
+      <img src="img/velo.jpg" class="carousel-img active" />
+      <img src="img/voyage.jpg" class="carousel-img" />
+      <button class="next">&#10095;</button>
+    </div>
+    <div class="text-border">
+      <div class="text-container">
+        <p>Détail complet du projet 1.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Projet 2 : Texte gauche, image droite -->
+<div class="project-row reverse">
+  <div class="project-desc">
+    <h3>Projet 2&nbsp;: Voyage sportif en Europe</h3>
+    <p>Organisation et réalisation d’un roadtrip vélo/bateau.</p>
+  </div>
+  <div class="project-img">
+    <img id="clickableImage2" src="img/P2.jpg" alt="Projet 2 : Cliquer ici" />
+  </div>
+</div>
+<!-- Modale Projet 2 -->
+<div id="myModal2" class="modal">
+  <span class="close-btn" id="closeModal2">&times;</span>
+  <div class="modal-content">
+    <div class="carousel" id="carousel2">
+      <button class="prev">&#10094;</button>
+      <img src="img/imgbateau.jpg" class="carousel-img active" />
+      <img src="img/bateau.jpg" class="carousel-img" />
+      <button class="next">&#10095;</button>
+    </div>
+    <div class="text-border">
+      <div class="text-container">
+        <p>Détail complet du projet 2.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Projet 3 : Image gauche, texte droite -->
+<div class="project-row">
+  <div class="project-img">
+    <img id="clickableImage3" src="img/P3.jpg" alt="Projet 3 : Cliquer ici" />
+  </div>
+  <div class="project-desc">
+    <h3>Projet 3&nbsp;: Fabrication d’une pièce usinée</h3>
+    <p>Réalisation d’un usinage complexe sur machine-outil pour un prototype technique.</p>
+  </div>
+</div>
+<!-- Modale Projet 3 -->
+<div id="myModal3" class="modal">
+  <span class="close-btn" id="closeModal3">&times;</span>
+  <div class="modal-content">
+    <div class="carousel" id="carousel3">
+      <button class="prev">&#10094;</button>
+      <img src="img/usinage1.jpg" class="carousel-img active" />
+      <img src="img/usinage2.jpg" class="carousel-img" />
+      <button class="next">&#10095;</button>
+    </div>
+    <div class="text-border">
+      <div class="text-container">
+        <p>Détail complet du projet 3.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h2 class="txt">
+    Dans le cadre extra-scolaire
+</h2>
+
+<!-- Projet 4 : Texte gauche, image droite -->
+<div class="project-row reverse">
+  <div class="project-desc">
+    <h3>Projet 4&nbsp;: nutr.</h3>
+    <p>Développement d'une application dédiée à l'optimisation de la nutrition chez les sportifs afin de favoriser la performance.</p>
+  </div>
+  <div class="project-img">
+    <img id="clickableImage4" src="img/P4.jpg" alt="Projet 4 : Cliquer ici" />
+  </div>
+</div>
+<!-- Modale Projet 4 -->
+<div id="myModal4" class="modal">
+  <span class="close-btn" id="closeModal4">&times;</span>
+  <div class="modal-content">
+    <div class="carousel" id="carousel4">
+      <button class="prev">&#10094;</button>
+      <img src="img/mat1.jpg" class="carousel-img active" />
+      <img src="img/mat2.jpg" class="carousel-img" />
+      <button class="next">&#10095;</button>
+    </div>
+    <div class="text-border">
+      <div class="text-container">
+        <p>Détail complet du projet 4.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="carouselprojet.js"></script>
+          <!-- FIN MODALE 2 -->
+
+
+    <div class="contact-form" id="contact">
+        <form action="https://formspree.io/f/xanodoqo"method="POST">
+        <label>
+        Votre adresse mail:
+            <input type="email" name="email">
+        </label>
+        <label> Nom :
+            <input type="text" name="name">
+        </label>
+        <label> prénom :
+            <input type="text" name="firstname">
+        </label>
+        <label> Objet :
+            <input type="text" name="Object">
+        </label>
+        <label> Votre message :
+            <textarea name="message"></textarea>
+        </label>
+        <button type="submit">Envoyer</button>
+    </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Mon Portfolio</p>
+    </footer>
+
+</html>

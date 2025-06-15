@@ -1,4 +1,521 @@
+/* Reset de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Calibri, sans-serif;
+}
+
 html {
-  height: 100%;
+    scroll-behavior: smooth;
+}
+/* Corps du site */
+body {
+    background-color: #D3D3D3;
+    /* Correction d'une erreur dans la couleur */
+}
+
+/* MENU STICKY */
+#menu {
+    width: 100%;
+    /* Prend toute la largeur de l'écran */
+    background-color: #1E3A5F;
+    position: sticky;
+    top: 0;
+    font-size: 3vh;
+    z-index: 1000;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.4);
+    padding: 12px 2px;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    /* Centre le contenu horizontalement */
+}
+
+/* Conteneur du menu */
+#menu ul {
+    display: flex;
+    /* Affichage en ligne */
+    justify-content: center;
+    /* Centre les éléments horizontalement */
+    align-items: center;
+    /* Aligne les éléments verticalement */
+    list-style: none;
+    width: 100%;
+    /* S'assure que le ul prend toute la largeur */
+    padding: 0 5px;
+    margin: 0;
+}
+
+#menu ul li {
+    margin: 0 20px;
+    /* Espacement entre les éléments */
+}
+
+#menu ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 15px 20px;
+    font-weight: bold;
+    position: relative; /* Permet d'ajouter la ligne avec ::after */
+    transition: background-color 0.3s ease, transform 0.2s ease, opacity 0.3s ease;
+}
+
+#menu ul li a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0; /* On part d'une largeur nulle */
+    height: 2px;
+    background-color: white;
+    transition: width 0.7s ease, left 0.7s ease;
+}
+#menu ul li a:hover {
+    background-color: rgba(21, 40, 64, 0.8);
+    transform: translateY(-2px);
+}
+
+#menu ul li a:hover::after {
+    width: 100%; /* La ligne grandit */
+    left: 0; /* On la repositionne correctement */
+}
+
+/* Mode mobile */
+@media screen and (max-width: 768px) {
+    #menu ul {
+        flex-direction: column;
+        /* Affichage en colonne sur mobile */
+    }
+
+    #menu ul li {
+        margin: 10px 0;
+    }
+}
+
+/* Conteneur de la présentation avec image et texte */
+.presentation {
+    position: relative;
+    /* Nécessaire pour que le positionnement absolu de l'image soit relatif à ce conteneur */
+    padding: 40px 20px;
+    /* Ajoute un peu d'espace autour du contenu */
+    max-width: 1450px;
+    /* Limite la largeur du conteneur */
+    margin: 50px auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    /* Aligne les éléments à gauche */
+    flex-wrap: wrap;
+    /* Permet à l'image et au texte de s'ajuster en fonction de la taille */
+
+}
+
+/* Style de l'image */
+.presentation img {
+    max-width: 30%;
+    /* Limite la taille de l'image à 50% de la largeur du conteneur */
+    height: auto;
+    /* Maintient les proportions de l'image */
+    margin-right: 25px;
+    /* Espacement entre l'image et le texte */
+    border-radius: 8px;
+    /* Ajoute des coins arrondis à l'image */
+}
+
+/* Style du texte de présentation */
+#pres {
+    font-size: 1.6em;
+    /* Taille du texte */
+    color: #333;
+    /* Couleur du texte */
+    line-height: 1.6;
+    /* Espacement des lignes pour une meilleure lisibilité */
+    max-width: 700px;
+    /* Limite la largeur du texte */
+    margin-top: 0%;
+    /* Ajoute un espace sous l'image pour éviter le chevauchement */
+}
+
+/* Mode mobile */
+@media screen and (max-width: 768px) {
+    .presentation {
+        text-align: center;
+        /* Centre l'image et le texte sur mobile */
+        padding: 10px;
+        /* Ajuste le padding sur mobile */
+    }
+
+    .presentation img {
+        max-width: 100%;
+        /* L'image prend toute la largeur sur mobile */
+        margin-bottom: 20px;
+        /* Ajoute un espacement entre l'image et le texte */
+    }
+
+    #pres {
+        margin-left: 0;
+        /* Annule le padding du texte sur mobile */
+        margin-top: 10px;
+        /* Ajuste l'espace sous l'image sur mobile */
+    }
+}
+
+/* Style pour la div Valeurs */
+.txt {
+    margin-top: 40px;
+    /* Donne un espacement entre le texte de présentation et la section Valeurs */
+    text-align: center;
+    /* Centrer le texte dans cette section */
+    font-size: 1.1em;
+    /* Taille de police ajustée */
+    line-height: 1.6;
+}
+
+/* STYLE POUR LE CAROUSEL EN INDEX */
+.carousel-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* optionnel : centrer aussi verticalement */
+}
+
+#carouselExampleCaptions {
+    max-width: 1000px;
+    width: 100%;
+}
+.carousel-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-inner img {
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    width: 100%;
+}
+
+.carousel-control-prev, .carousel-control-next {
+    top: 50%!important;
+    transform: translateY(-50%);
+}
+
+.carousel-control-prev {
+    left: 10%;
+}
+
+.carousel-control-next {
+    right: 10%;
+}
+
+/* FIN STYLE CAROUSEL INDEX */
+
+
+/* DEBUT CAROUSEL PROJET */
+
+/* --- CAROUSEL PROJET --- */
+
+/* Style image cliquable pour tous les projets */
+.project-img img {
+  width: 400px;
+  max-width: 90vw;
+  cursor: pointer;
+  border: 2px solid #333;
+  border-radius: 10px;
+  margin: 0 auto;
+  transition: transform 0.25s;
+  display: block;
+}
+
+.project-img img:hover {
+  transform: scale(1.04);
+}
+
+/* Modale pop-up plein écran */
+.modal {
+  position: fixed;
+  z-index: 9999;
+  left: 0; top: 0;
+  width: 100vw; height: 100vh;
+  background-color: rgba(0,0,0,0.5);
+  overflow: auto;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+}
+
+.modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Contenu centré de la modale */
+.modal-content {
+  background: white;
+  margin: 5% auto;
+  padding: 15px 15px 25px 15px;
+  width: 80%;
+  max-width: 1400px;
+  display: flex;
+  border-radius: 8px;
+  position: relative;
+  height: 50vh;
+  overflow: hidden;
+}
+
+/* Carousel à gauche */
+.carousel {
+  flex: 1;
+  margin-right: 20px;
+  position: relative;
+  max-width: 700px;
+  height: auto;
+  overflow: hidden;
+}
+
+/* Images du carousel */
+.carousel-img {
+  opacity: 0;
+  transition: opacity 0.5s;
+  z-index: 0;
+  position: absolute;
+  top: 0; left: 0;
   width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px;
+  pointer-events: none;
+}
+.carousel-img.active {
+  opacity: 1;
+  z-index: 1;
+  pointer-events: auto;
+}
+
+/* Boutons carousel */
+.carousel button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(50,50,50,0.5);
+  border: none;
+  color: white;
+  font-size: 24px;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 3px;
+  user-select: none;
+  z-index: 10;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.carousel button:hover {
+  background: rgba(50,50,50,0.8);
+  transition: background 0.3s ease;
+}
+.prev { left: 10px; }
+.next { right: 10px; }
+
+.text-border {
+    border-left: 2px solid #ccc;
+    height: auto;
+}
+/* Zone de texte scrollable à droite */
+.text-container {
+  flex: 1;
+  max-height: 50vh;
+  max-width: 700px;
+  overflow-y: auto;
+  padding-right: 10px;
+  margin-left: 10px;
+  box-sizing: border-box;
+}
+
+/* bouton fermer */
+.close-btn {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  font-size: 28px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Grille projets */
+.project-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 40px auto 0 auto;
+  max-width: 1100px;
+  gap: 40px;
+}
+
+.project-desc {
+  flex: 1;
+  font-size: 1.15em;
+  color: #222;
+  background: #fff;
+  padding: 25px 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+  max-width: 600px;
+}
+
+.project-row.reverse {
+  flex-direction: row-reverse !important;
+}
+
+/* Responsive mobile */
+@media screen and (max-width: 850px) {
+  .project-row,
+  .project-row.reverse {
+    flex-direction: column !important;
+    gap: 15px;
+    align-items: stretch;
+  }
+  .project-img img {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  .project-desc {
+    max-width: 100%;
+    padding: 15px 10px;
+  }
+  .modal-content {
+    flex-direction: column;
+    height: auto;
+    max-height: 90vh;
+  }
+  .carousel {
+    margin-right: 0;
+    max-width: 100%;
+    width: 100%;
+    height: 300px;
+    margin-bottom: 20px;
+  }
+  .text-border {
+    max-width: 100%;
+    margin-left: 0;
+    height: auto;
+  }
+  .carousel-img {
+    opacity: 0;
+    transition: opacity 0.5s;
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+}
+
+body.blurred-bg > *:not(.modal) {
+  filter: blur(8px) brightness(0.85);
+  pointer-events: none;
+  user-select: none;
+  transition: filter 0.4s;
+}
+body.blurred-bg .modal.show {
+  filter: none !important;
+  pointer-events: auto !important;
+  user-select: auto !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  z-index: 9999 !important;
+}
+
+
+/* FIN CAROUSEL PROJET */
+.CI {
+    text-align: center;
+}
+
+.CI .contenu {
+    display: flex;
+    justify-content: center;
+    gap: 50px; /* Espacement entre les éléments */
+    flex-wrap: wrap; /* Permet d'adapter l'affichage si l'écran est trop petit */
+}
+
+.CI .element {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 300px; /* Ajuste la largeur de chaque élément */
+}
+
+.imgCI {
+    width: 100%;
+    max-width: 200%; /* Taille des images */
+    height: auto;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out;
+    margin: 30px;
+}
+
+.imgCI:hover {
+    transform: scale(1.2);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin: 1rem auto;
+  padding: 1rem;
+  background: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.contact-form label {
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.5rem;
+  margin-top: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.contact-form button {
+  margin-top: 1.5rem;
+  padding: 0.75rem;
+  font-size: 1rem;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: #0056b3;
+}
+
+
+.contact {
+    padding-top: 40px;
+    text-align: center;
+    font-size: 1.1em;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #1E3A5F;
+    color: white;
 }
