@@ -5,6 +5,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Mon Portfolio Numérique</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
 </head>
 <body>
 		<header>
@@ -12,7 +14,7 @@
             <ul>
                 <li><a href="index.html">A propos de moi</a></li>
                 <li><a href="projet.html">Projets</a></li>
-                <li><a href="competence.html">Compétences</a></li>
+                <li><a href="competence.html" class="active">Compétences</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -21,8 +23,72 @@
 	<br>
 	<p id="num2"> Présentation de la compétence 2</p>
 
-</body>
+<div class="contact-form" id="contact">
+  <h2>Contactez-moi</h2>
+  <form action="https://formspree.io/f/xanodoqo" method="POST">
+    <label for="email">Votre adresse mail</label>
+    <input type="email" id="email" name="email" placeholder="exemple@domaine.com" required>
+
+    <label for="name">Nom</label>
+    <input type="text" id="name" name="name" placeholder="Votre nom" required>
+
+    <label for="firstname">Prénom</label>
+    <input type="text" id="firstname" name="firstname" placeholder="Votre prénom" required>
+
+    <label for="subject">Sujet</label>
+    <select id="subject" name="subject" required>
+      <option value="">Sélectionnez un sujet</option>
+      <option value="projet">Projet</option>
+      <option value="alternance">Professionnel</option>
+      <option value="question">Autre</option>
+    </select>
+
+    <label for="message">Votre message</label>
+    <textarea id="message" name="message" rows="5" placeholder="Votre message..." required></textarea>
+
+    <button type="submit">Envoyer</button>
+  </form>
+</div>
+
 <footer>
 	<p>&copy; 2025 Mon Portfolio</p>
 </footer>
+
+<button id="backToTop" title="Remonter en haut">↑</button>
+<script>
+  const btn = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    const docHeight = document.body.scrollHeight - window.innerHeight;
+    const scrollPercent = Math.min(Math.max(scrollY / docHeight, 0), 1);
+
+    // Affichage après 25% de scroll
+    if (scrollPercent > 0.25) {
+      btn.classList.add('show');
+      btn.classList.remove('hide');
+    } else {
+      btn.classList.add('hide');
+      btn.classList.remove('show');
+    }
+
+    // Opacité
+    btn.style.opacity = scrollPercent;
+
+    // Hauteur de l'oblong (de 30px à 80px)
+    const newHeight = 30 + (80 - 30) * scrollPercent;
+    btn.style.height = newHeight + 'px';
+
+    // Taille de la flèche (proportionnelle à la hauteur)
+    btn.style.fontSize = (newHeight * 0.8) + 'px';
+
+    // Ajuste la line-height pour centrer verticalement
+    btn.style.lineHeight = newHeight + 'px';
+  });
+
+  btn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+
+</body>
 </html>

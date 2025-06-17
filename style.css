@@ -1,437 +1,190 @@
-/* Reset de base */
+/* ===== Reset & Base ===== */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Calibri, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  background-color: #f5f7fa;
+  font-size: 16px;
 }
-/* Corps du site */
 body {
-    background-color: #D3D3D3;
-    /* Correction d'une erreur dans la couleur */
+  line-height: 1.6;
+  background-color: #f5f7fa !important;
+  padding-top: 70px;
+}
+img {
+  max-width: 100%;
+  display: block;
 }
 
-/* MENU STICKY */
+/* ===== Typography ===== */
+h1, h2, h3, h4, h5 {
+  font-family: 'Montserrat', sans-serif;
+  color: #1a1a1a;
+  margin-bottom: 0.5em;
+  text-align: center;
+  text-decoration: none;
+}
+p, a, li, label, input, span, textarea, select {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  color: #555;
+}
+p {
+  text-align: justify;      /* justifie toutes les lignes */
+  text-align-last: center;  /* centre la dernière ligne */
+  /* Pour que l'effet soit plus visible, on restreint souvent la largeur : */
+  max-width: 800px;
+  margin: 0 auto;           /* centre le paragraphe globalement */
+}
+
+li {
+   text-align: justify;      /* justifie toutes les lignes */
+  text-align-last: center;  /* centre la dernière ligne */
+  /* Pour que l'effet soit plus visible, on restreint souvent la largeur : */
+  max-width: 800px;
+  margin: 0 auto;    
+}
+a {
+  color: #1e90ff;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+a:hover {
+  color: #0056b3;
+}
+
+/* ===== Section Divider ===== */
+.section-divider {
+  width: 60%;           /* largeur de la barre */
+  height: 3px;          /* épaisseur */
+  background: #ccc;     /* couleur de la barre */
+  margin: 2rem auto;    /* centrée avec marge verticale */
+  border: none;         /* pas de bordure par défaut */
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+/* ===== Navigation ===== */
 #menu {
-    width: 100%;
-    /* Prend toute la largeur de l'écran */
-    background-color: #1E3A5F;
-    position: sticky;
-    top: 0;
-    font-size: 3vh;
-    z-index: 1000;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.4);
-    padding: 12px 2px;
-    display: flex;
-    justify-content: center;
-    text-decoration: none;
-    /* Centre le contenu horizontalement */
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-decoration: none;
+  font-size: 16px;
+  height: 70px;
+  z-index: 1000;
 }
-
-/* Conteneur du menu */
 #menu ul {
-    display: flex;
-    /* Affichage en ligne */
-    justify-content: center;
-    /* Centre les éléments horizontalement */
-    align-items: center;
-    /* Aligne les éléments verticalement */
-    list-style: none;
-    width: 100%;
-    /* S'assure que le ul prend toute la largeur */
-    padding: 0 5px;
-    margin: 0;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 15px 5px;
+  margin: 0;
+  width: 100%;
 }
-
 #menu ul li {
-    margin: 0 20px;
-    /* Espacement entre les éléments */
+  margin: 0 1.5rem;
 }
-
 #menu ul li a {
-    text-decoration: none;
-    color: white;
-    padding: 15px 20px;
-    font-weight: bold;
-    position: relative; /* Permet d'ajouter la ligne avec ::after */
-    transition: background-color 0.3s ease, transform 0.2s ease, opacity 0.3s ease;
+  position: relative;
+  padding: 15px 20px;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+  text-decoration: none;
 }
-
 #menu ul li a::after {
-    content: "";
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #1e90ff;
+  transition: width 0.6s ease, left 0.6s ease;
+  text-decoration: underline;
+}
+
+#menu ul li a.active {
+    color: #1e90ff;
+    font-weight: 700;
+}
+
+#menu ul li a.active::after {
+    content: '';
     position: absolute;
-    left: 50%;
-    bottom: 0;
-    width: 0; /* On part d'une largeur nulle */
+    bottom: -4px;
+    left: 0;
+    width: 100%;
     height: 2px;
-    background-color: white;
-    transition: width 0.7s ease, left 0.7s ease;
+    background: #1e90ff;
 }
-#menu ul li a:hover {
-    background-color: rgba(21, 40, 64, 0.8);
-    transform: translateY(-2px);
+#menu ul li a:hover,
+#menu ul li a.active {
+  color: #1e90ff;
+  transition: width 0.3s ease, left 0.3s ease;
 }
-
-#menu ul li a:hover::after {
-    width: 100%; /* La ligne grandit */
-    left: 0; /* On la repositionne correctement */
-}
-
-/* Mode mobile */
-@media screen and (max-width: 768px) {
-    #menu ul {
-        flex-direction: column;
-        /* Affichage en colonne sur mobile */
-    }
-
-    #menu ul li {
-        margin: 10px 0;
-    }
+#menu ul li a:hover::after,
+#menu ul li a.active::after {
+  width: 100%;
+  left: 0;
+  transition: width 0.3s ease, left 0.3s ease;
 }
 
-/* Conteneur de la présentation avec image et texte */
+/* ===== Header Presentation ===== */
 .presentation {
-    position: relative;
+  position: relative;
     /* Nécessaire pour que le positionnement absolu de l'image soit relatif à ce conteneur */
     padding: 40px 20px;
     /* Ajoute un peu d'espace autour du contenu */
-    max-width: 1450px;
+    max-width: 1100px;
     /* Limite la largeur du conteneur */
-    margin: 50px auto;
+    margin: 10px auto;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     /* Aligne les éléments à gauche */
     flex-wrap: wrap;
     /* Permet à l'image et au texte de s'ajuster en fonction de la taille */
-
 }
-
-/* Style de l'image */
 .presentation img {
-    max-width: 30%;
-    /* Limite la taille de l'image à 50% de la largeur du conteneur */
-    height: auto;
-    /* Maintient les proportions de l'image */
-    margin-right: 25px;
-    /* Espacement entre l'image et le texte */
-    border-radius: 8px;
-    /* Ajoute des coins arrondis à l'image */
-}
-
-/* Style du texte de présentation */
-#pres {
-    font-size: 1.6em;
-    /* Taille du texte */
-    color: #333;
-    /* Couleur du texte */
-    line-height: 1.6;
-    /* Espacement des lignes pour une meilleure lisibilité */
-    max-width: 700px;
-    /* Limite la largeur du texte */
-    margin-top: 0%;
-    /* Ajoute un espace sous l'image pour éviter le chevauchement */
-}
-
-/* Mode mobile */
-@media screen and (max-width: 768px) {
-    .presentation {
-        text-align: center;
-        /* Centre l'image et le texte sur mobile */
-        padding: 10px;
-        /* Ajuste le padding sur mobile */
-    }
-
-    .presentation img {
-        max-width: 100%;
-        /* L'image prend toute la largeur sur mobile */
-        margin-bottom: 20px;
-        /* Ajoute un espacement entre l'image et le texte */
-    }
-
-    #pres {
-        margin-left: 0;
-        /* Annule le padding du texte sur mobile */
-        margin-top: 10px;
-        /* Ajuste l'espace sous l'image sur mobile */
-    }
-}
-
-/* Style pour la div Valeurs */
-.txt {
-    margin-top: 40px;
-    /* Donne un espacement entre le texte de présentation et la section Valeurs */
-    text-align: center;
-    /* Centrer le texte dans cette section */
-    font-size: 1.1em;
-    /* Taille de police ajustée */
-    line-height: 1.6;
-}
-
-/* STYLE POUR LE CAROUSEL EN INDEX */
-.carousel-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* optionnel : centrer aussi verticalement */
-}
-
-#carouselExampleCaptions {
-    max-width: 1000px;
-    width: 100%;
-}
-.carousel-item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.carousel-inner img {
-    aspect-ratio: 16/9;
-    object-fit: cover;
-    width: 100%;
-}
-
-.carousel-control-prev, .carousel-control-next {
-    top: 50%!important;
-    transform: translateY(-50%);
-}
-
-.carousel-control-prev {
-    left: 10%;
-}
-
-.carousel-control-next {
-    right: 10%;
-}
-
-/* FIN STYLE CAROUSEL INDEX */
-
-
-/* DEBUT CAROUSEL PROJET */
-
-/* --- CAROUSEL PROJET --- */
-
-/* Style image cliquable pour tous les projets */
-.project-img img {
-  width: 400px;
-  max-width: 90vw;
-  cursor: pointer;
-  border: 2px solid #333;
-  border-radius: 10px;
-  margin: 0 auto;
-  transition: transform 0.25s;
-  display: block;
-}
-
-.project-img img:hover {
-  transform: scale(1.04);
-}
-
-/* Modale pop-up plein écran */
-.modal {
-  position: fixed;
-  z-index: 9999;
-  left: 0; top: 0;
-  width: 100vw; height: 100vh;
-  background-color: rgba(0,0,0,0.5);
-  overflow: auto;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease;
-}
-
-.modal.show {
-    opacity: 1;
-    visibility: visible;
-}
-
-/* Contenu centré de la modale */
-.modal-content {
-  background: white;
-  margin: 5% auto;
-  padding: 15px 15px 25px 15px;
-  width: 80%;
-  max-width: 1400px;
-  display: flex;
+  max-width: 25%;
   border-radius: 8px;
-  position: relative;
-  height: 50vh;
-  overflow: hidden;
+  margin-right: 25px;
 }
-
-/* Carousel à gauche */
-.carousel {
-  flex: 1;
-  margin-right: 20px;
-  position: relative;
-  max-width: 700px;
-  height: auto;
-  overflow: hidden;
-}
-
-/* Images du carousel */
-.carousel-img {
-  opacity: 0;
-  transition: opacity 0.5s;
-  z-index: 0;
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 5px;
-  pointer-events: none;
-}
-.carousel-img.active {
-  opacity: 1;
-  z-index: 1;
-  pointer-events: auto;
-}
-
-/* Boutons carousel */
-.carousel button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(50,50,50,0.5);
-  border: none;
-  color: white;
-  font-size: 24px;
-  padding: 8px 12px;
-  cursor: pointer;
-  border-radius: 3px;
-  user-select: none;
-  z-index: 10;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.carousel button:hover {
-  background: rgba(50,50,50,0.8);
-  transition: background 0.3s ease;
-}
-.prev { left: 10px; }
-.next { right: 10px; }
-
-.text-border {
-    border-left: 2px solid #ccc;
-    height: auto;
-}
-/* Zone de texte scrollable à droite */
-.text-container {
-  flex: 1;
-  max-height: 50vh;
-  max-width: 700px;
-  overflow-y: auto;
-  padding-right: 10px;
-  margin-left: 10px;
-  box-sizing: border-box;
-}
-
-/* bouton fermer */
-.close-btn {
-  position: absolute;
-  right: 20px;
-  top: 15px;
-  font-size: 28px;
-  font-weight: bold;
-  color: white;
-  cursor: pointer;
-  user-select: none;
-}
-
-/* Grille projets */
-.project-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 40px auto 0 auto;
-  max-width: 1100px;
-  gap: 40px;
-}
-
-.project-desc {
-  flex: 1;
-  font-size: 1.15em;
-  color: #222;
-  background: #fff;
-  padding: 25px 30px;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+#pres {
   max-width: 600px;
+  font-size: 1.125rem;
 }
 
-.project-row.reverse {
-  flex-direction: row-reverse !important;
+/* ===== Section Text Wrapper ===== */
+.txt {
+  padding: 2rem 1rem;
+  align-content: center;
 }
-
-/* Responsive mobile */
-@media screen and (max-width: 850px) {
-  .project-row,
-  .project-row.reverse {
-    flex-direction: column !important;
-    gap: 15px;
-    align-items: stretch;
-  }
-  .project-img img {
-    width: 100%;
-    max-width: 500px;
-    margin: 0 auto;
-  }
-  .project-desc {
-    max-width: 100%;
-    padding: 15px 10px;
-  }
-  .modal-content {
-    flex-direction: column;
-    height: auto;
-    max-height: 90vh;
-  }
-  .carousel {
-    margin-right: 0;
-    max-width: 100%;
-    width: 100%;
-    height: 300px;
-    margin-bottom: 20px;
-  }
-  .text-border {
-    max-width: 100%;
-    margin-left: 0;
-    height: auto;
-  }
-  .carousel-img {
-    opacity: 0;
-    transition: opacity 0.5s;
-    position: relative;
-    width: 100%;
-    height: auto;
-  }
+.txt h2,
+.txt h3,
+.txt h4,
+.txt h1 {
+  text-align: center;
+  margin-bottom: 1rem;
 }
-
-body.blurred-bg > *:not(.modal) {
-  filter: blur(8px) brightness(0.85);
-  pointer-events: none;
-  user-select: none;
-  transition: filter 0.4s;
-}
-body.blurred-bg .modal.show {
-  filter: none !important;
-  pointer-events: auto !important;
-  user-select: auto !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-  z-index: 9999 !important;
+.txt p {
+  max-width: 800px;
+  text-align: center;
+  margin: 0 auto 1.5rem;
+  line-height: 1.6;
+  font-size: 1.1em;
 }
 
 
-/* FIN CAROUSEL PROJET */
 .CI {
     text-align: center;
 }
@@ -455,67 +208,352 @@ body.blurred-bg .modal.show {
     max-width: 200%; /* Taille des images */
     height: auto;
     border-radius: 5px;
-    transition: transform 0.3s ease-in-out;
     margin: 30px;
 }
 
 .imgCI:hover {
     transform: scale(1.2);
+    transition: transform 0.3s ease-in-out;
 }
 
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  max-width: 600px;
-  margin: 1rem auto;
-  padding: 1rem;
-  background: #f9f9f9;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+.imgCI:hover + p {
+    transition: color 0.4s ease, font-weight 4s ease;
+    color: #000;
+    font-weight: 400;
 }
 
-.contact-form label {
-  margin-top: 1rem;
-  font-weight: bold;
+/* ===== Index Carousel ===== */
+.carousel-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* optionnel : centrer aussi verticalement */
 }
 
-.contact-form input,
-.contact-form textarea {
-  padding: 0.5rem;
-  margin-top: 0.3rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 1rem;
+#carouselExampleCaptions {
+  max-width: 1000px;
   width: 100%;
+  border-radius: 12px ;
+}
+.carousel-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px ;
+}
+.carousel-inner img {
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  width: 100%;
+  border-radius: 12px ;
 }
 
-.contact-form button {
-  margin-top: 1.5rem;
-  padding: 0.75rem;
-  font-size: 1rem;
-  background-color: #007BFF;
-  color: white;
-  border: none;
-  border-radius: 8px;
+.carousel-control-prev, .carousel-control-next {
+    top: 50%!important;
+    transform: translateY(-50%);
+}
+
+.carousel-control-prev {
+    left: 10%;
+}
+
+.carousel-control-next {
+    right: 10%;
+} 
+
+
+.carousel-indicators {
+  display: none !important;
+}
+
+/* ===== Projects Modal & Carousel Controls ===== */
+.project-img img {
+  width: 400px;
+  max-width: 90vw;
   cursor: pointer;
-  transition: background-color 0.3s;
+  border: 2px solid #333;
+  border-radius: 10px;
+  margin: 0 auto;
+  transition: transform 0.25s;
+}
+.project-img img:hover {
+  transform: scale(1.04);
+}
+.modal {
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.5);
+  overflow: auto;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+}
+.modal.show {
+  opacity: 1;
+  visibility: visible;
+}
+.modal-content {
+  background: #ffffff;
+  margin: 5% auto;
+  padding: 15px 15px 25px 15px;
+  width: 80%;
+  max-width: 1400px;
+  display: flex;
+  border-radius: 8px;
+  position: relative;
+  height: 50vh;
+  overflow: hidden;
+}
+.carousel {
+  flex: 1;
+  margin-right: 20px;
+  position: relative;
+  max-width: 700px;
+  height: auto;
+  overflow: hidden;
+}
+.carousel-img {
+  opacity: 0;
+  transition: opacity 0.5s;
+  z-index: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px;
+  pointer-events: none;
+}
+.carousel-img.active {
+  opacity: 1;
+  z-index: 1;
+  pointer-events: auto;
+}
+.carousel button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 28px;
+  padding: 0;
+  cursor: pointer;
+  user-select: none;
+  z-index: 10;
 }
 
+.carousel button:hover {
+    color: rgba(232, 232, 232, 0.7);
+    transition: color, 0.4s ease;
+
+}
+.prev { left: 10px; }
+.next { right: 10px; }
+.text-border {
+  border-left: 2px solid #ccc;
+  height: auto;
+}
+.text-container {
+  flex: 1;
+  max-height: 50vh;
+  max-width: 700px;
+  overflow-y: auto;
+  padding-right: 10px;
+  margin-left: 10px;
+  box-sizing: border-box;
+}
+
+/* ===== Center project rows ===== */
+.project-row, .project-row.reverse {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+@media (max-width: 850px) {
+  .project-row,
+  .project-row.reverse {
+    flex-direction: column; /* repasse en colonne sur mobile */
+    align-items: center;
+  }
+}
+
+.project-desc {
+  flex: 1;
+  font-size: 1.15em;
+  color: #222;
+  background: #fff;
+  padding: 25px 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+  text-align: center;
+  max-width: 600px;
+}
+
+.close-btn {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  font-size: 28px;
+  font-weight: bold;
+  color: white;
+  background: rgba(123,128,129,0.8);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  text-align: center;
+  line-height: 36px;
+  cursor: pointer;
+}
+
+body.blurred-bg > *:not(.modal) {
+  filter: blur(8px) brightness(0.85);
+  pointer-events: none;
+  user-select: none;
+  transition: filter 0.4s;
+}
+body.blurred-bg .modal.show {
+  filter: none !important;
+  pointer-events: auto !important;
+  user-select: auto !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  z-index: 9999 !important;
+}
+
+
+/* === CV === */
+
+/* ===== Center CV block ===== */
+.CV {
+  text-align: center;
+}
+.CV a {
+  display: inline-block;
+}
+.CV img {
+  display: block;
+  margin: 0 auto;
+}
+
+/* ===== Contact Form ===== */
+.contact-form {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin-top: 200px;
+}
+.contact-form h2 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #1a1a1a;
+  text-align: center;
+}
+.contact-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccd0d5;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form select:focus {
+  border-color: #1e90ff;
+  outline: none;
+}
+.contact-form button {
+  background: #1e90ff;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+  display: block;
+  margin: 0 auto;
+}
 .contact-form button:hover {
-  background-color: #0056b3;
+  background: #0056b3;
 }
 
-
-.contact {
-    padding-top: 40px;
-    text-align: center;
-    font-size: 1.1em;
-}
-
-/* Footer */
+/* ===== Footer ===== */
 footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #1E3A5F;
-    color: white;
+  background: #1a1a1a;
+  color: #f0f0f0;
+  text-align: center;
+  padding: 1.5rem;
+  position: relative;
+  width: 100%;
+  clear: both;
 }
+footer p {
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .presentation {
+    flex-direction: column;
+    text-align: center;
+  }
+  .presentation img {
+    margin: 0 0 1.5rem;
+  }
+  #menu ul {
+    flex-direction: column;
+  }
+  .txt {
+    padding: 1rem;
+  }
+}
+
+/* ===== Back to Top Button ===== */
+#backToTop {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  display: none;
+  width: 50px;              
+  height: 30px;             
+  background: #1e90ff;
+  color: #fff;
+  border: none;
+  border-radius: 15px;      
+  cursor: pointer;
+  font-size: 24px;          
+  /* Flex centering au lieu de line-height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  transition: opacity 0.3s ease, height 0.3s ease, font-size 0.3s ease;
+}
+#backToTop.show {
+  display: flex;
+  opacity: 1;
+}
+#backToTop.hide {
+  opacity: 0;
+}
+
