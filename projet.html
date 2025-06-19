@@ -6,6 +6,8 @@
     <title>Mon Portfolio Numérique</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="js/loader.js" defer></script>
+    <script src="js/BackToTop.js" defer></script>
+    <script src="js/carouselprojet.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 
 
@@ -14,7 +16,7 @@
     <!-- Écran de chargement -->
   <div id="loader">
     <div class="spinner"></div>
-    <p class="loader-text">Patientez un instant…</p>
+      <p class="loader-text">Chargement en cours...<br><br><br><br><br><br><br><br><br>Codé par Eliott LEGRU</p>
   </div>
         <header>
         <nav id="menu">
@@ -38,11 +40,13 @@
 <!-- Projet 1 : Image gauche, texte droite -->
 <div class="project-row">
   <div class="project-img">
-    <img id="clickableImage1" src="img/P1.jpg" alt="Projet 1 : Cliquer ici" />
+    <img id="clickableImage1" src="img/ph1sae21.png" alt="Projet 1 : Cliquer ici" />
   </div>
   <div class="project-desc">
-    <h3>Projet 1&nbsp;: Rénovation d’un vélo de route</h3>
-    <p>Restauration complète d’un vélo vintage, démontage, sablage, peinture, upgrades.</p>
+    <h3>Spécification des processus d’élaboration d’une pièce – SAE 2.1</h3>
+    <p>Réalisation d'Avant Projets d'Etudes de Fabrication, de contrats de phases et d'une démarche pour la fabrication d'une pièce.
+<br><br>
+</p>
   </div>
 </div>
 <!-- Modale Projet 1 -->
@@ -51,13 +55,36 @@
   <div class="modal-content">
     <div class="carousel" id="carousel1">
       <button class="prev">&#10094;</button>
-      <img src="img/velo.jpg" class="carousel-img active" />
-      <img src="img/voyage.jpg" class="carousel-img" />
+      <img src="img/ph1sae21.png" class="carousel-img active" />
+      <img src="img/ph2sae21.png" class="carousel-img" />
+      <img src="img/ph3sae21.png" class="carousel-img" />
       <button class="next">&#10095;</button>
     </div>
     <div class="text-border">
       <div class="text-container">
-        <p>Détail complet du projet 1.</p>
+        <p>Dans le cadre d'une SAE (Situation d'Apprentissage Evaluée) réalisée à l’IUT, j’ai eu pour mission de définir de A à Z les différentes étapes de fabrication d’une « poupée mobile » en alliage léger. À partir du dessin de définition de la pièce brute et finie, j’ai d’abord procédé à une analyse détaillée des surfaces à usiner et des spécifications dimensionnelles (intrinsèques et relatives). Cette approche m’a permis de me familiariser avec les exigences techniques et de construire un premier ébauchage d’ordonnancement des phases d’usinage, en tenant compte des surfaces de référence nécessaires au maintien de la précision géométrique.
+<br><br>
+Par la suite, j’ai formalisé un document d’Avant-Projet d’Étude de Fabrication (APEF) regroupant six entrées clés : phase, surface à usiner, type de spécification, surface(s) de référence, numéro de phase, et respect des tolérances. Cette matrice m’a servi de base pour planifier les opérations de fraisage conventionnel (dressage, surfaçage, rainurage), de perçage et d’alésage, en renseignant pour chacune les machines (fraiseuse, étau), les outillages (forets, fraises, alésoirs) et les modes de maintien (appui plan, linéaire, ponctuel).
+<br><br>
+<strong>L’ordonnancement final intègre cinq grandes phases :</strong>
+<br><br>
+    Moulage initial par fonderie sable pour obtenir la pièce brute.
+<br><br>
+    Fraisage & perçage des repères D et Eb sur fraiseuse conventionnelle.
+<br><br>
+    Opérations W, C, K, G, M : pré-perçages, alésages, dressages et surfaçages successifs.
+<br><br>
+    Usinage des repères I, J, E, F : pointages, pré-perçages, tarages et alésages précis.
+<br><br>
+    Ajustage : ébavurage et taraudages finaux pour obtention des filetages M6 et M8.
+<br><br>
+Tout au long de ce processus, j’ai veillé à limiter les changements d’outils et à optimiser les mises en position (MIP) afin de réduire les temps morts et d’assurer la conformité aux tolérances. L’un des principaux défis a été d’imaginer en 3D les montages de bridage, notamment pour certaines surfaces de référence volumineuses : j’ai donc multiplié les essais « au brouillon » avant de retenir les configurations les plus stables.
+<br><br>
+<strong>Retour d’expérience :</strong><br>
+– Points forts : démarche systématique d’analyse des surfaces, création d’une matrice APEF exploitable, optimisation des phases pour limiter les changements d’outils.<br>
+– Axes d’amélioration : choix plus précis des surfaces de prise d’appui (MIP) pour certaines opérations complexes, et étude plus approfondie des possibilités de réduction de cycle en combinant plusieurs opérations sur la même configuration machine.
+<br><br>
+Ce projet m’a offert une vision concrète de la gestion de projet de production en GMP, depuis l’analyse de besoin jusqu’à la préparation détaillée de chaque phase d’usinage, et m’a permis de renforcer mes compétences en planification, en métrologie et en optimisation de processus.<br><br><br></p>
       </div>
     </div>
   </div>
@@ -66,11 +93,11 @@
 <!-- Projet 2 : Texte gauche, image droite -->
 <div class="project-row reverse">
   <div class="project-desc">
-    <h3>Projet 2&nbsp;: Voyage sportif en Europe</h3>
-    <p>Organisation et réalisation d’un roadtrip vélo/bateau.</p>
+    <h3>Projet : Élaboration des processus de fabrication pour un moteur pneumatique</h3>
+    <p>Rédaction de documents de fabrication pour une fabrication en machines conventionnelles et à commande numérique.</p>
   </div>
   <div class="project-img">
-    <img id="clickableImage2" src="img/P2.jpg" alt="Projet 2 : Cliquer ici" />
+    <img id="clickableImage2" src="img/ph1sae32.png" alt="Projet 2 : Cliquer ici" />
   </div>
 </div>
 <!-- Modale Projet 2 -->
@@ -79,13 +106,91 @@
   <div class="modal-content">
     <div class="carousel" id="carousel2">
       <button class="prev">&#10094;</button>
-      <img src="img/imgbateau.jpg" class="carousel-img active" />
-      <img src="img/bateau.jpg" class="carousel-img" />
+      <img src="img/ph1sae32.png" class="carousel-img active" />
+      <img src="img/ph2sae32.png" class="carousel-img" />
+      <img src="img/ph3sae32.png" class="carousel-img" />
       <button class="next">&#10095;</button>
     </div>
     <div class="text-border">
       <div class="text-container">
-        <p>Détail complet du projet 2.</p>
+        <p>
+Dans ce projet, j’ai réalisé un Avant-Projet d’Étude de Fabrication (APEF) pour définir précisément les phases d’usinage, d’outillage et de maintien des différents éléments constitutifs du volant d’inertie d’un moteur pneumatique en acier E235. L’étude couvre à la fois des fabrications unitaires en conventionnel et des fabrications en lot de 50 pièces en commande numérique, pour deux sous-ensembles (volant et moyeu) ainsi que pour la base du moteur.
+<br><br>
+<strong>1. Volant d’inertie – usinage conventionnel</strong>
+<br><br>
+L’APEF pour le volant en usinage conventionnel décrit cinq grandes phases, depuis le débit du brut jusqu’à l’ajustage final:
+<br><br>
+    Phase 00 : Débit d’un rond acier Ø 65 mm par scie à ruban.
+<br><br>
+    Phase 10 : Tournage conventionnel (dressage, chariotage, perçages Ø 19, Ø 38H8 et Ø 42 mm) avec plaquettes carbure pour ébauche et finition, minimisant les reprises d’outil.
+<br><br>
+    Phase 20 : Dressage secondaire sur le tour pour obtenir la face A finie.
+<br><br>
+    Phase 30 : Perçage des perçages Ø 4,5 H11 sur perceuse à colonne, y compris pointage et chanfreinage.
+<br><br>
+    Phase 40 : Ajustage (ébavurage) pour supprimer les arêtes vives.
+<br><br>
+Chaque opération précise les surfaces de référence utilisées pour la mise en position (appuis plans, centrage court) et les tolérances à respecter.<br><br>
+
+<strong>2. Moyeu du volant – usinage conventionnel</strong>
+<br><br>
+Le moyeu, pièce unitaire en acier Ø 40 mm, suit un ordre similaire:
+<br><br>
+    Débit du brut en Ø 40 × 60 mm.
+<br><br>
+    Tournage conventionnel étagé (dressages et chariotages ébauche/finition) jusqu’aux périmètres internes et externes.
+<br><br>
+    Perçages des trous taraudés M4 au centre et sur la face, avec petit alésoir pour assurer la précision H7.
+<br><br>
+    Taraudage final à l’étau.
+<br><br>
+Les choix de mandrin 3 mors durs et d’appui plan sont documentés en détail pour garantir la stabilité de la pièce lors de l’usinage.
+<br><br>
+<strong>3. Volant d’inertie – usinage en Commande Numérique (CN)</strong>
+<br><br>
+Pour une production de 50 pièces, l’APEF en CN optimise les temps et la précision:
+<br><br>
+    Tour CN : ébauche et finition des alésages intérieurs/extérieurs via commandes linéaires, avec changement rapide d’outils.
+<br><br>
+    Fraisage CN (Haas VF3) pour surfacage, fraisurage de rainures, pointage et perçages Ø 4,5 H11.
+<br><br>
+    Chanfreinage et tronçonnage manuel.
+<br><br>
+La modularité de la chaîne d’outils (fraises surfacer, 2T, forets à pointer, alésoirs) permet de passer sans reprises lourdes entre les phases de fraisage et de perçage.
+<br><br>
+<strong>4. Moyeu du volant – usinage en CN</strong>
+<br><br>
+Le moyeu en lot suit maintenant un usinage complet CN:
+<br><br>
+    Tour CN (face D, chariotages internes/externes, centrage/percages).
+<br><br>
+    Fraiseuse CN pour perçages taraudés M4 (pointage, pré-perçage, finition).
+<br><br>
+    Ajustage final (taraudage à l’étau).
+<br><br>
+Chaque poste de travail détaille les appuis (plan, centrage court), les vitesses de coupe, avancées et profondeurs de passe pour un rendement maximal.<br><br>
+
+<strong>5. Fabrication de la base – fraisage CN</strong>
+<br><br>
+Enfin, la base de l’ensemble, pièce unitaire en acier E235, est entièrement usinée sur fraiseuse à commande numérique:
+<br><br>
+    Surfaçage et contournage des faces A, B, C, avec fraisages de rainures.
+<br><br>
+    Perçages et lamages Ø 10 H9 en ébauche et finition.
+<br><br>
+    Perçages taraudés M8, réglés pour une précision maximale.
+<br><br>
+Le plan de phase intègre un appui linéaire rectiligne et butée, préservant la géométrie pendant les opérations.
+<br><br>
+<strong>Bilan & compétences développées</strong>
+<br><br>
+    - Maîtrise de la méthodologie APEF/CPH pour l’ordonnancement précis des opérations.
+<br><br>
+    - Connaissance approfondie des machines conventionnelles et CN (tours, perceuses, fraiseuses).
+<br><br>
+    - Optimisation des temps de cycle et des changements d’outils.
+<br><br>
+    - Gestion des tolérances et des montages de bridage (appuis plan, centrage court).<br><br><br></p>
       </div>
     </div>
   </div>
@@ -94,11 +199,11 @@
 <!-- Projet 3 : Image gauche, texte droite -->
 <div class="project-row">
   <div class="project-img">
-    <img id="clickableImage3" src="img/P3.jpg" alt="Projet 3 : Cliquer ici" />
+    <img id="clickableImage3" src="img/ph7sae31.jpg" alt="Projet 3 : Cliquer ici" />
   </div>
   <div class="project-desc">
-    <h3>Projet 3&nbsp;: Fabrication d’une pièce usinée</h3>
-    <p>Réalisation d’un usinage complexe sur machine-outil pour un prototype technique.</p>
+    <h3>Projet 3&nbsp;: Réparation d'une épée de voltige</h3>
+    <p>Analyse, Conception, Réalisation pour la réparation d'une épée destinée à la voltige.</p>
   </div>
 </div>
 <!-- Modale Projet 3 -->
@@ -107,13 +212,32 @@
   <div class="modal-content">
     <div class="carousel" id="carousel3">
       <button class="prev">&#10094;</button>
-      <img src="img/usinage1.jpg" class="carousel-img active" />
-      <img src="img/usinage2.jpg" class="carousel-img" />
+      <img src="img/ph1sae31.jpg" class="carousel-img active" />
+      <img src="img/ph2sae31.jpg" class="carousel-img" />
+      <img src="img/ph3sae31.jpg" class="carousel-img" />
+      <img src="img/ph4sae31.jpg" class="carousel-img" />
+      <img src="img/ph5sae31.jpg" class="carousel-img" />
+      <img src="img/ph6sae31.jpg" class="carousel-img" />
+      <img src="img/ph7sae31.jpg" class="carousel-img" />
       <button class="next">&#10095;</button>
     </div>
     <div class="text-border">
       <div class="text-container">
-        <p>Détail complet du projet 3.</p>
+        <p>En janvier, nous avons réceptionné une épée nécessitant une remise en service complète : la garde présentait un jeu important et la lame était cassé au niveau du pommeau, la rendant inutilisable. Nous avons d’abord réalisé une modélisation numérique de l’ensemble, afin de simuler plusieurs options de renfort et de sélectionner la solution la plus stable.
+<br><br>
+Une fois le plan validé, nous avons rédigé les documents de fabrication, précisant les opérations, les tolérances, les outillages et les mises en position nécessaires sur machines conventionnelles. Sur tour et fraiseuse, nous avons usiné la tige de renfort interne et les rivets en acier, destinés à solidariser la soie de la lame, la garde et le pommeau. la mise sous presse de la tige dans le pommeau a exigé un ajustement au dixième de millimètre, pour garantir un emmanchement parfait. Nous avons également riveté les rivets en les chauffant au rouge puis en les martelant une fois dans leur emplacement afin de les immobiliser.
+<br><br>
+<strong>Ensuite, nous avons confectionné le manche :</strong>
+<br><br>
+    Taillage d’un noyau en mousse Airex pour redonner du volume et préformer l’ergonomie.
+<br><br>
+    Bouchage des cavités à la résine chargée, éliminant tout jeu et assurant une surface plane.
+<br><br>
+    Stratification composite : application successive de tissus de verre imprégnés de résine polyester, polymérisation.
+<br><br>
+    Ponçage jusqu'à obtention de la forme définitive puis peinture.
+<br><br>
+ L’épée, désormais parfaitement rigide et équilibrée, a retrouvé sa pleine fonctionnalité, tout en conservant un aspect esthétique fidèle à son style médiéval.<br><br><br></p>
       </div>
     </div>
   </div>
@@ -126,11 +250,12 @@
 <!-- Projet 4 : Texte gauche, image droite -->
 <div class="project-row reverse">
   <div class="project-desc">
-    <h3>Projet 4&nbsp;: nutr.</h3>
+    <h3>nutr. – Optimiser la nutrition au service de la performance
+</h3>
     <p>Développement d'une application dédiée à l'optimisation de la nutrition chez les sportifs afin de favoriser la performance.</p>
   </div>
   <div class="project-img">
-    <img id="clickableImage4" src="img/P4.jpg" alt="Projet 4 : Cliquer ici" />
+    <img id="clickableImage4" src="img/nutr.png" alt="Projet 4 : Cliquer ici" />
   </div>
 </div>
 <!-- Modale Projet 4 -->
@@ -139,19 +264,58 @@
   <div class="modal-content">
     <div class="carousel" id="carousel4">
       <button class="prev">&#10094;</button>
-      <img src="img/mat1.jpg" class="carousel-img active" />
-      <img src="img/mat2.jpg" class="carousel-img" />
+      <img src="img/nutr.png" class="carousel-img active" />
       <button class="next">&#10095;</button>
     </div>
     <div class="text-border">
       <div class="text-container">
-        <p>Détail complet du projet 4.</p>
+        <p>
+<strong>Contexte :</strong><br>
+nutr. est un projet personnel d’application mobile que je développe depuis 2024.
+Il est né d’un constat vécu en tant que sportif : malgré une multitude d’applications existantes, aucune ne propose un accompagnement nutritionnel personnalisé, pédagogique et réellement connecté à la pratique sportive.
+<br><br>
+<strong>Objectif du projet :</strong><br>
+Créer un outil intelligent, bienveillant et structurant pour aider les sportifs (de tous niveaux) à :
+<br><br>
+    Adapter leur alimentation à leur activité, leurs objectifs et leur rythme de vie
+<br><br>
+    Comprendre les effets de la nutrition sur leurs performances, leur récupération et leurs sensations
+<br><br>
+    Progresser sans tomber dans le dogme ou la culpabilité
+<br><br>
+<strong>Fonctionnalités envisagées (MVP) :</strong>
+<br><br>
+    Profil personnalisé selon la discipline, les préférences et le niveau
+<br><br>
+    Suggestions de repas en lien avec le planning d’entraînement
+<br><br>
+    Suivi des performances, sensations et état émotionnel
+<br><br>
+    Conseils évolutifs basés sur les retours utilisateur
+<br><br>
+<strong>Avancement :</strong>
+<br><br>
+    Étude de marché, benchmark, analyse SWOT réalisés
+<br><br>
+    Cadrage fonctionnel en cours
+<br><br>
+    Collaboration prévue avec des étudiants du département GEA de l’IUT de Brest à la rentrée 2025
+<br><br>
+    MVP à construire courant 2025 en partenariat
+<br><br>
+<strong>Ce que ce projet dit de moi :</strong>
+<br><br>
+    Capacité à structurer une idée de A à Z
+<br><br>
+    Vision long terme, ancrée dans le réel
+<br><br>
+    Autonomie, rigueur, et ouverture à la collaboration<br><br><br></p>
       </div>
     </div>
   </div>
 </div>
 
-<script src="js/carouselprojet.js"></script>
+
           <!-- FIN MODALE 2 -->
 
 <hr class="section-divider">
@@ -187,40 +351,5 @@
     </footer>
 
 <button id="backToTop" title="Remonter en haut">↑</button>
-<script>
-  const btn = document.getElementById('backToTop');
-  window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-    const docHeight = document.body.scrollHeight - window.innerHeight;
-    const scrollPercent = Math.min(Math.max(scrollY / docHeight, 0), 1);
-
-    // Affichage après 25% de scroll
-    if (scrollPercent > 0.25) {
-      btn.classList.add('show');
-      btn.classList.remove('hide');
-    } else {
-      btn.classList.add('hide');
-      btn.classList.remove('show');
-    }
-
-    // Opacité
-    btn.style.opacity = scrollPercent;
-
-    // Hauteur de l'oblong (de 30px à 80px)
-    const newHeight = 30 + (80 - 30) * scrollPercent;
-    btn.style.height = newHeight + 'px';
-
-    // Taille de la flèche (proportionnelle à la hauteur)
-    btn.style.fontSize = (newHeight * 0.8) + 'px';
-
-    // Ajuste la line-height pour centrer verticalement
-    btn.style.lineHeight = newHeight + 'px';
-  });
-
-  btn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-</script>
-
 </body>
 </html>
